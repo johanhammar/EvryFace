@@ -19,7 +19,6 @@ public class DisplayPersonActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_person);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
         
         Intent intent = getIntent();
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);

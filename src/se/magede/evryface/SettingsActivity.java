@@ -1,11 +1,10 @@
 package se.magede.evryface;
 
 import android.os.Bundle;
-import android.preference.PreferenceFragment;
-import android.app.Activity;
+import android.preference.PreferenceActivity;
 import android.view.Menu;
 
-public class SettingsActivity extends Activity {
+public class SettingsActivity extends PreferenceActivity {
 
 	public final static String KEY_PREF_HOST = "pref_host";
 	public final static String KEY_PREF_URL = "pref_url";
@@ -16,17 +15,7 @@ public class SettingsActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        // Display the fragment as the main content.
-		getFragmentManager().beginTransaction().replace(
-				android.R.id.content, 
-				new PreferenceFragment () {
-					@Override
-				    public void onCreate(Bundle savedInstanceState) {
-				        super.onCreate(savedInstanceState);
-				        addPreferencesFromResource(R.xml.preferences);
-				    }
-				}).commit();
-        
+        addPreferencesFromResource(R.xml.preferences);
     }
 
     @Override
